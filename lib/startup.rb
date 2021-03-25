@@ -29,4 +29,18 @@ class Startup
     @employees.length
   end
 
+  def pay_employee(employee)
+    employee_salary = @salaries[employee.title]
+    if @funding > employee_salary
+      employee.pay(employee_salary)
+      @funding -= employee_salary
+    else
+      raise Error
+    end
+  end
+
+  def payday
+    @employees.each {|employee| pay_employee(employee)}
+  end
+
 end
