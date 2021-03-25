@@ -55,4 +55,11 @@ class Startup
     @funding = 0
   end
 
+  def acquire(startup)
+    @funding += startup.funding
+    @salaries = startup.salaries.update(@salaries)
+    @employees = @employees + startup.employees
+    startup.close
+  end
+
 end
