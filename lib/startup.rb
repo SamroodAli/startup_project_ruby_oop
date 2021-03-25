@@ -50,4 +50,9 @@ class Startup
    total_salary/no_of_employees
   end
 
+  def close
+    @employees = []
+    @funding = 0
+  end
+
 end
