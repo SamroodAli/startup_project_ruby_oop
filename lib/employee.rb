@@ -1,5 +1,5 @@
 class Employee
-@attr_readers :name :title
+  attr_reader :name, :title
 
   def initialize(name,title)
     @name = name
